@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1350px;
+    height: 60px;
+    background-color: #4a1831;
+    position: fixed;
+    z-index: 2;
+}
+
+.nav a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffd7ad;
+    font-weight: 400;
+    font-family: "Montserrat";
+    margin: 0 30px;
+    transition: 0.2s;
+}
+
+.nav a:hover {
+    text-shadow: 3px 3px 4px white;
+    font-weight: bold;
+    color: white;
+}
+
+.main {
+    width: 1350px;
+    height: fit-content;
+}
+
+.part0 {
+    width: 1350px;
+    height: 60px;
+}
+
+.part1 {
+    display: flex;
+    flex-direction: column;
+    width: 1350px;
+    height: 596px;
+    background-image: url(sample/Place\ Your\ Image\ Here\ \(Double\ Click\ to\ Edit\).png);
+}
+
+.part1 img {
+    height: 100px;
+    width: 100px;
+    margin: 50px 0px 10px 70px;
+}
+
+.big {
+    width: 400px;
+    font-size: 80px;
+    color: #ffd7ad;
+    font-weight: 700;
+    font-family: "Roboto";
+    margin: 10px 10px 20px 70px;
+}
+
+.small {
+    display: block;
+    width: 600px;
+    font-size: 18px;
+    color: #ffd7ad;
+    font-weight: 400;
+    font-family: "Roboto";
+    margin: 40px 0px 10px 70px;
+}
+
+.order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    border-radius: 33px;
+    background-color: #ffd7ad;
+    text-decoration: none;
+    font-style: normal;
+    font-family: "Roboto";
+    font-weight: bold;
+    color: #4a1831;
+    margin: 25px 0px 0px 70px;
+    transition: 0.2s;
+}
+
+.order:hover {
+    background-color: #4a1831;
+    color: #ffd7ad;
+}
+
+.part2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1350px;
+    height: 300px;
+    background-color: #ffd7ad;
+}
+
+.midbig {
+    color: #4a1831;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: "Roberto";
+    margin: 0 0 20px 0;
+}
+
+.midsmall {
+    color: #4a1831;
+    width: 700px;
+    font-size: 18px;
+    font-family: "Roberto";
+    text-align: center;
+    margin: 0 0 35px 0;
+}
+
+.part2 .order,
+.part4 .order,
+.part8 .order {
+    margin: 0;
+    background-color: #4a1831;
+    color: #ffd7ad;
+}
+
+.part2 .order:hover,
+.part4 .order:hover,
+.part8 .order:hover {
+    background-color: #ffd7ad;
+    color: #4a1831;
+    border: 2px solid #4a1831;
+}
+
+.part3 {
+    width: 1350px;
+    height: 300px;
+    background-image: url(sample/Rectángulo\ 1.png);
+}
+
+.part4 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 1350px;
+    height: 700px;
+    background-color: #ffd7ad;
+}
+
+.part4 img {
+    width: 500px;
+    height: 500px;
+}
+
+.part4 .midsmall {
+    width: 500px;
+    text-align: start;
+}
+
+.part5 {
+    display: flex;
+    width: 1350px;
+    height: 700px;
+    background-color: #ffd7ad;
+    position: relative;
+}
+
+.part5 img {
+    height: 600px;
+    position: absolute;
+    top: 100px;
+    left: 400px;
+    overflow: hidden;
+}
+
+.part5 .dis {
+    width: 700px;
+    position: relative;
+    top: 100px;
+    left: 100px;
+}
+
+.part5 .dis p:nth-child(1) {
+    font-size: 140px;
+    text-transform: uppercase;
+    color: #e63956;
+    font-weight: 900;
+    font-family: "Roboto";
+    line-height: 140px;
+}
+
+.part5 .dis p:nth-child(2) {
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #55112e;
+    font-weight: 900;
+    font-family: "Roboto";
+    line-height: 30px;
+}
+
+.part5 .dis p:nth-child(3) {
+    font-size: 80px;
+    text-transform: uppercase;
+    color: #6cc5ac;
+    font-weight: 900;
+    font-family: "Roboto";
+    line-height: 80px;
+}
+
+.part6 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 1350px;
+    height: 700px;
+    background-color: #4a1831;
+}
+
+.part6 img {
+    width: 500px;
+    height: 500px;
+}
+
+.part6 .midbig {
+    color: #ffd7ad;
+}
+
+.part6 .midsmall {
+    color: #ffd7ad;
+    width: 500px;
+    text-align: start;
+}
+
+.part6 .order {
+    margin: 0;
+    color: #4a1831;
+    background-color: #ffd7ad;
+}
+
+.part6 .order:hover {
+    color: #ffd7ad;
+    background-color: #4a1831;
+    border: 2px solid #ffd7ad;
+}
+
+.part7 {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 1350px;
+    height: 700px;
+    background-color: rgba(32, 3, 18, 0.8);
+}
+
+.part7::before {
+    position: absolute;
+    content: "";
+    height: inherit;
+    width: inherit;
+    background-image: url(sample/Place\ Your\ Image\ Here\ \(Double\ Click\ to\ Edit\)\ \(1\).png);
+    background-position: -90px -120px;
+    z-index: -1;
+}
+
+.part7 img {
+    height: 152px;
+    width: 145px;
+    margin-bottom: 50px;
+}
+
+.part7 .midsmall {
+    width: 1000px;
+    color: #ffd7ad;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.part8 {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 1350px;
+    height: 700px;
+    background-color: #ffd7ad;
+    /* position: relative; */
+}
+
+.part8 .midbig {
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+.part8 .midsmall {
+    margin-bottom: 50px;
+}
+
+.part8 input[type="email"] {
+    width: 500px;
+    height: 40px;
+    border: 0;
+    outline: 0;
+    border-radius: 33px;
+    padding-left: 23px;
+}
+
+.part8 .order {
+    width: 150px;
+    border: 0;
+    outline: 0;
+    position: relative;
+    top: -40px;
+    left: 350px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 1350px;
+    height: 700px;
+    background-color: #4a1831;
+}
+
+.endbig {
+    font-size: 24px;
+    color: #ffd7ad;
+    font-weight: 400;
+    font-family: "Roboto";
+    margin-bottom: 15px;
+}
+
+.endsmall {
+    font-size: 18px;
+    color: #ffd7ad;
+    font-weight: 400;
+    font-family: "Roboto";
+    line-height: 28px;
+}
+
+.one .endsmall {
+    width: 500px;
+}
+
+.one img {
+    width: 40px;
+    height: 40px;
+    margin: 15px 3px;
+}
+
+.two {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.two .more {
+    margin: 20px;
+}
+
+.two .endsmall a {
+    color: #ffd7ad;
+    text-decoration: none;
+}
+
+.two .endsmall a:hover {
+    color: white;
+}
