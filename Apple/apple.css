@@ -1,0 +1,1612 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: rgba(22, 22, 23, .8);
+    --icon-color: rgb(219, 219, 219);
+    --black: rgb(22, 22, 22);
+    --text-color: rgb(110, 110, 110);
+    --text-color2: #E8E8ED;
+    --button-width: .img-9.right;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+
+/* header start */
+
+.header {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    min-width: 320px;
+    max-width: 2560px;
+    height: 48px;
+    background-color: var(--bg-color);
+    backdrop-filter: blur(10px);
+    transition: 0.4s ease;
+    transition-delay: 0.3s;
+
+    .mob-nav {
+        display: none;
+        justify-content: space-between;
+        width: inherit;
+        height: inherit;
+
+        .mob-nav-pos {
+            display: flex;
+        }
+
+        .mob-nav-logo,
+        .mob-nav-srh,
+        .mob-nav-cart {
+            fill: var(--icon-color);
+            padding: 0 16px;
+        }
+
+        .hideIcons {
+            fill: transparent;
+            pointer-events: none;
+        }
+
+        .mob-menu-btn {
+            z-index: 5;
+            padding: 11px 16px 0 16px;
+
+            .mob-menu-icon {
+                display: block;
+                width: 16px;
+                height: 2px;
+                background-color: var(--icon-color);
+                margin: 7px 0;
+                border-radius: 2px;
+                transition: 0.3s ease;
+            }
+
+        }
+
+        .cross1 {
+            translate: 0px 4px;
+            transform: rotate(45deg);
+        }
+
+        .cross2 {
+            translate: 0px -5px;
+            transform: rotate(-45deg);
+        }
+
+        .mob-nav-srhBar {
+            display: block;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 0;
+            width: 100%;
+            color: var(--text-color2);
+            background-color: var(--black);
+            padding: 50px 0 0 45px;
+            z-index: 3;
+            pointer-events: none;
+            overflow: scroll;
+            transition: 0.4s ease-in;
+
+            .srhBar-top {
+                display: flex;
+                margin-bottom: 40px;
+                transition: 0.4s ease-in;
+                opacity: 0;
+            }
+
+            .srhBar-icon-mag {
+                fill: rgb(167, 167, 167);
+                margin: 5px 3px 0 0;
+            }
+
+            .srhBar-icon-cls {
+                fill: transparent;
+                pointer-events: none;
+                margin: 15px 0 0 12px;
+                transition: 0.5s ease;
+            }
+
+            .cls-vis {
+                pointer-events: all;
+                fill: rgb(167, 167, 167);
+            }
+
+            .srhBar-inp {
+                width: 60%;
+                color: white;
+                font-size: 28px;
+                font-weight: 600;
+                font-family: sans-serif;
+                background-color: transparent;
+                border: none;
+                outline: none;
+            }
+
+            .srhBar-heading {
+                color: var(--text-color);
+                font-size: 18px;
+                font-weight: normal;
+                font-family: sans-serif;
+                margin-bottom: 20px;
+            }
+
+            .srhBar-bottom {
+                display: flex;
+                flex-flow: column;
+                margin-bottom: 100px;
+                transition: 0.4s ease-in;
+                opacity: 0;
+
+                .srhBar-link {
+                    display: flex;
+                    align-items: center;
+                    font-family: sans-serif;
+                    fill: var(--text-color);
+                    margin-bottom: 15px;
+
+                    .srhBar-link-text {
+                        padding-left: 12px;
+                    }
+                }
+            }
+
+            .content-vis {
+                transition-delay: 0.1s;
+                opacity: 1;
+            }
+        }
+
+        .mob-srhbar-vis {
+            height: 100vh;
+            pointer-events: all;
+            visibility: visible;
+        }
+
+        .mob-nav-cartBar {
+            visibility: hidden;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 0;
+            width: 100%;
+            color: var(--icon-color);
+            background-color: var(--black);
+            font-family: sans-serif;
+            padding: 50px 0 0 45px;
+            pointer-events: none;
+            overflow: scroll;
+            z-index: 3;
+            transition: 0.4s ease-in;
+
+            .cartBar-top {
+                width: 80%;
+                margin-bottom: 50px;
+                transition: 0.4s ease-in;
+                opacity: 0;
+
+                .cartBar-heading {
+                    color: white;
+                    font-weight: normal;
+                    margin-bottom: 20px;
+                }
+
+                .cartBar-text {
+                    color: var(--text-color);
+                    font-size: 18px;
+                }
+
+            }
+
+            .cartBar-bottom {
+                display: flex;
+                flex-flow: column;
+                margin-bottom: 100px;
+                transition: 0.4s ease-in;
+                opacity: 0;
+
+                .cartBar-heading {
+                    color: var(--text-color);
+                    font-weight: normal;
+                    font-size: 18px;
+                    margin-bottom: 15px;
+                }
+
+                .cartBar-links {
+                    display: flex;
+                    align-items: center;
+                    fill: var(--text-color);
+                    margin-bottom: 15px;
+
+                    .cartBar-link-text {
+                        padding-left: 12px;
+                    }
+                }
+            }
+
+            .content-vis {
+                transition-delay: 0.1s;
+                opacity: 1;
+            }
+        }
+
+        .cartBar-text a {
+            color: royalblue;
+        }
+
+        .mob-cartBar-vis {
+            visibility: visible;
+            height: 100vh;
+            pointer-events: all;
+        }
+
+        .mobMenu {
+            visibility: hidden;
+            display: flex;
+            flex-flow: column;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background-color: var(--black);
+            padding: 50px 0 0 45px;
+            pointer-events: none;
+            overflow: scroll;
+            z-index: 3;
+            transition: 0.4s ease-in;
+
+            .mobMenu-link {
+                width: max-content;
+                color: var(--text-color2);
+                font-size: 28px;
+                font-family: sans-serif;
+                padding: 7px;
+            }
+
+            .mobMenu-con {
+                display: flex;
+                flex-flow: column;
+                margin-bottom: 100px;
+                opacity: 0;
+                transition: 0.4s ease-in;
+            }
+
+            .mobMenu-con-vis {
+                transition-delay: 0.2s;
+                opacity: 1;
+            }
+        }
+
+        .mobmenu-vis {
+            visibility: visible;
+            height: 100vh;
+            pointer-events: all;
+        }
+
+        .mobMenu-hide {
+            left: -2%;
+            pointer-events: none;
+        }
+
+        .mob-back-btn {
+            visibility: hidden;
+            pointer-events: none;
+            position: absolute;
+            left: 1%;
+            fill: var(--icon-color);
+            padding: 0 20px;
+            z-index: 5;
+            opacity: 0;
+            transition: 0.2s ease-in;
+        }
+
+        .mob-back-btn-vis {
+            visibility: visible;
+            pointer-events: all;
+            left: 0;
+            opacity: 1;
+        }
+
+        .mobMenu-pos {
+            display: flex;
+            flex-flow: column;
+            margin-bottom: 50px;
+        }
+
+        .mobMenu-pos:last-child {
+            margin-bottom: 100px;
+        }
+
+        .mobMenu-large {
+            width: fit-content;
+            color: var(--text-color2);
+            text-decoration: none;
+            font-size: 28px;
+            font-family: sans-serif;
+            padding: 7px 0;
+            margin-right: 100px;
+            cursor: default;
+        }
+
+        .mobMenu-heading {
+            color: var(--text-color);
+            font-size: 18px;
+            font-weight: normal;
+            font-family: sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .mobMenu-link {
+            width: fit-content;
+            color: var(--text-color2);
+            text-decoration: none;
+            font-size: 18px;
+            font-family: sans-serif;
+            padding: 7px 0;
+            margin-right: 100px;
+        }
+
+        .mobMenu-page {
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 2%;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--black);
+            padding: 50px 0 0 45px;
+            overflow: scroll;
+            pointer-events: none;
+            z-index: 4;
+            opacity: 0;
+            transition: 0.2s ease-in;
+        }
+
+        .mobMenu-page-vis {
+            visibility: visible;
+            pointer-events: all;
+            left: 0;
+            opacity: 1;
+        }
+    }
+
+    .big-nav {
+        display: none;
+        justify-content: center;
+        height: 44px;
+
+        .big-nav-pos {
+            display: flex;
+            justify-content: space-evenly;
+            width: 1050px;
+            height: 44px;
+        }
+
+        .big-nav-logo,
+        .big-nav-srh,
+        .big-nav-cart {
+            height: 44px;
+            fill: var(--icon-color);
+            cursor: pointer;
+            padding: 0 5px;
+        }
+
+        .big-nav-text {
+            display: block;
+            height: 44px;
+            line-height: 44px;
+            color: var(--icon-color);
+            text-decoration: none;
+            font-size: 12px;
+            font-family: sans-serif;
+            font-weight: 100;
+            padding: 0 5px;
+            cursor: pointer;
+        }
+
+        .bigMenu-large {
+            color: var(--icon-color);
+            text-decoration: none;
+            font-size: 24px;
+            font-family: sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px 0;
+        }
+
+        .bigMenu-large:hover {
+            color: white;
+        }
+
+        .bigMenu-heading {
+            color: var(--text-color);
+            font-size: 12px;
+            font-family: sans-serif;
+            font-weight: normal;
+            margin-bottom: 12px;
+        }
+
+        .bigMenu-link {
+            color: var(--icon-color);
+            text-decoration: none;
+            font-size: 12px;
+            font-family: sans-serif;
+            cursor: pointer;
+            padding: 5px 0;
+        }
+
+        .bigMenu-link:hover {
+            color: white;
+        }
+
+        .bigMenu-page {
+            display: flex;
+            flex-flow: row;
+            width: 1050px;
+            opacity: 0;
+            transition: 0.1s ease;
+            transition-delay: 0.2s;
+        }
+
+        .bigMenu-pos {
+            display: flex;
+            flex-flow: column;
+            margin-right: 50px;
+        }
+
+        .bigMenu-pos:first-child {
+            margin-left: 35px;
+            margin-right: 100px;
+        }
+
+        .bigMenu-bigPage {
+            visibility: hidden;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 44px;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background-color: var(--bg-color);
+            transition: 0.4s ease;
+            transition-delay: 0.3s;
+        }
+
+        .big-nav-item:hover {
+            .bigMenu-bigPage {
+                visibility: visible;
+                pointer-events: all;
+                background-color: var(--black);
+                transition-delay: 0s;
+                z-index: 2;
+            }
+
+            .text-item {
+                color: white;
+            }
+
+            .bigMenu-page {
+                opacity: 1;
+            }
+        }
+
+        /* Store */
+        .big-nav-store:hover {
+            .bigMenu-bigPage {
+                height: 370px;
+            }
+        }
+
+        /* Mac */
+        .big-nav-mac:hover {
+            .bigMenu-bigPage {
+                height: 508px;
+            }
+        }
+
+        /* iPad */
+        .big-nav-ipad:hover {
+            .bigMenu-bigPage {
+                height: 470px;
+            }
+        }
+
+        /* iPhone */
+        .big-nav-iphone:hover {
+            .bigMenu-bigPage {
+                height: 432px;
+            }
+        }
+
+        /* Watch */
+        .big-nav-watch:hover {
+            .bigMenu-bigPage {
+                height: 394px;
+            }
+        }
+
+        /* AirPods */
+        .big-nav-pods:hover {
+            .bigMenu-bigPage {
+                height: 370px;
+            }
+        }
+
+        /* TV & Home */
+        .big-nav-tv:hover {
+            .bigMenu-bigPage {
+                height: 338px;
+            }
+        }
+
+        /* Entertainment */
+        .big-nav-ent:hover {
+            .bigMenu-bigPage {
+                height: 446px;
+            }
+        }
+
+        /* Accessories */
+        .big-nav-acc:hover {
+            .bigMenu-bigPage {
+                height: 408px;
+            }
+        }
+
+        /* Support */
+        .big-nav-sup:hover {
+            .bigMenu-bigPage {
+                height: 446px;
+            }
+        }
+
+        .big-nav-srh {
+            .bigMenu-bigPage {
+                cursor: default;
+            }
+
+            .bigMenu-page {
+                flex-flow: column;
+            }
+
+            .bigMenu-pos:first-child {
+                margin: 0 35px 30px 35px;
+                flex-flow: row;
+                align-items: center;
+            }
+
+            .bigMenu-icon {
+                display: flex;
+                align-items: center;
+                fill: var(--text-color);
+                border-radius: 5px;
+                padding: 5px 5px;
+                margin-left: 35px;
+            }
+
+            .bigMenu-icon:hover {
+                fill: var(--icon-color);
+                background-color: rgb(31, 31, 31);
+
+                .bigMenu-link {
+                    color: white;
+                }
+            }
+
+            .bigMenu-srh-inp {
+                width: 100%;
+                color: white;
+                font-size: 24px;
+                font-weight: 600;
+                font-family: sans-serif;
+                background-color: transparent;
+                border: none;
+                outline: none;
+            }
+
+            .bigMenu-srh-cls {
+                margin-left: 8px;
+                opacity: 0;
+                transition: 0.5s ease;
+                cursor: pointer;
+            }
+
+            .bigMenu-srh-cls-vis {
+                opacity: 1;
+            }
+
+            .bigMenu-srh-mag {
+                margin-right: 3px;
+            }
+
+            .bigMenu-link {
+                font-size: 16px;
+                padding: 0px 10px;
+            }
+
+            .bigMenu-heading {
+                font-size: 16px;
+                margin: 0 0 10px 35px;
+            }
+        }
+
+        .big-nav-srh:hover {
+            .bigMenu-bigPage {
+                visibility: visible;
+                pointer-events: all;
+                height: 354px;
+                background-color: var(--black);
+                transition-delay: 0s;
+                z-index: 2;
+            }
+
+            .bigMenu-page {
+                opacity: 1;
+            }
+        }
+
+        .big-nav-cart {
+            .bigMenu-bigPage {
+                cursor: default;
+            }
+
+            .bigMenu-page {
+                flex-flow: column;
+            }
+
+            .bigMenu-pos {
+                margin-right: 0px;
+                margin-left: 35px;
+            }
+
+            .bigMenu-pos:first-child {
+                margin-bottom: 30px;
+            }
+
+            .bigMenu-large {
+                font-size: 28px;
+                cursor: default;
+                padding: 0;
+                margin-bottom: 20px;
+            }
+
+            .bigMenu-large:hover {
+                color: var(--icon-color);
+            }
+
+            .bigMenu-heading {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+
+            .bigMenu-icon {
+                display: flex;
+                align-items: center;
+                fill: var(--text-color);
+                padding: 3px 0;
+            }
+
+            .bigMenu-icon:hover {
+                fill: var(--icon-color);
+            }
+
+            .bigMenu-link {
+                font-size: 16px;
+                padding: 0px 10px;
+            }
+        }
+
+        .big-nav-cart:hover {
+            .bigMenu-bigPage {
+                visibility: visible;
+                pointer-events: all;
+                height: 372px;
+                background-color: var(--black);
+                transition-delay: 0s;
+                z-index: 2;
+            }
+
+            .bigMenu-page {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.main-blur {
+    filter: blur(10px);
+}
+
+.black {
+    background-color: var(--black);
+    transition-delay: 0s;
+}
+
+.blue-link {
+    color: royalblue;
+    text-decoration: none;
+}
+
+.blue-link:hover {
+    text-decoration: underline;
+}
+
+/* header end */
+
+
+/* main start */
+
+.main {
+    min-width: 320px;
+    max-width: 2560px;
+    margin-top: 48px;
+    transition: 0.3s ease-in;
+
+    .large-text {
+        font-size: 32px;
+        font-weight: 600;
+        font-family: sans-serif;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .mid-text {
+        font-size: 20px;
+        font-weight: normal;
+        font-family: sans-serif;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .blue-link {
+        font-family: sans-serif;
+        font-size: 18px;
+        margin: 0 10px;
+    }
+
+    .top-offer {
+        display: flex;
+        justify-content: center;
+
+        .offer-text {
+            width: 343px;
+            line-height: 20px;
+            font-size: 14px;
+            font-family: sans-serif;
+            text-align: center;
+            padding: 10px 20px;
+
+            .blue-link {
+                font-size: 14px;
+                margin: 0;
+            }
+        }
+    }
+
+    .info-con {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 500px;
+        background-size: 734px 548px;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 10px;
+    }
+
+    .text-con {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    .link-con {
+        margin-top: 7px;
+    }
+
+    .macBook-air {
+        .info-con {
+            background-image: url(sample/mobile_hero_macbook_air_15.jpg);
+        }
+    }
+
+    .iphone-14-pro {
+        .info-con {
+            background-image: url(sample/mobile_hero_iphone14pro_spring.jpg);
+        }
+
+        .large-text,
+        .mid-text {
+            color: white;
+        }
+
+        .blue-link {
+            color: dodgerblue;
+        }
+    }
+
+    .iphone-14 {
+        .info-con {
+            background-image: url(sample/mobile_promo_iphone14.jpg);
+        }
+    }
+
+    .watch-series-8 {
+        .info-con {
+            background-image: url(sample/mobile_promo_watch.jpg);
+        }
+
+        .pic {
+            width: 109px;
+            height: 42px;
+            background-image: url(sample/mobile_promo_logo_apple_watch_series_8.png);
+            background-size: 109px 42px;
+            margin-bottom: 10px;
+        }
+
+        .large-text,
+        .mid-text {
+            color: white;
+        }
+
+        .blue-link {
+            color: dodgerblue;
+        }
+    }
+
+    .ipad-pro {
+        .info-con {
+            background-image: url(sample/mobile_promo_ipad.jpg);
+        }
+
+        .mid-text {
+            display: flex;
+            align-items: center;
+        }
+
+        .pic {
+            width: 33px;
+            height: 33px;
+            background-image: url(sample/mobile_promo_m2_chip.png);
+            background-size: 33px 33px;
+            margin-left: 5px;
+        }
+
+        .large-text,
+        .mid-text {
+            color: white;
+        }
+
+        .blue-link {
+            color: dodgerblue;
+        }
+    }
+
+    .trade-in {
+        .info-con {
+            background-image: url(sample/mobile_iphone_tradein_promo.jpg);
+        }
+
+        .pic {
+            width: 128px;
+            height: 27px;
+            background-image: url(sample/mobile_logo_tradein.png);
+            background-size: 128px 27px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .mac-studio {
+        .info-con {
+            background-image: url(sample/mobile_promo_mac_studio.jpg);
+        }
+
+        .mid-text {
+            width: 200px;
+        }
+    }
+
+    .homepod {
+        .info-con {
+            background-image: url(sample/mobile_promo_homepod.jpg);
+        }
+
+        .large-text,
+        .mid-text {
+            color: white;
+        }
+
+        .blue-link {
+            color: dodgerblue;
+        }
+    }
+
+}
+
+/* carousel */
+
+.main {
+    .carousel {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 533px;
+
+        .atv-container {
+            display: flex;
+            flex-flow: column;
+            width: inherit;
+            height: inherit;
+            justify-content: space-between;
+            background-image: linear-gradient(to top, var(--black), transparent, transparent);
+
+            .atv-pos {
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                margin: 20px 0;
+            }
+
+            .atv-plus {
+                width: 69px;
+                height: 27px;
+                background-image: url(sample/mobile_logo_hero_light.png);
+                background-size: 69px 27px;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin-bottom: 10px;
+            }
+
+            .atv-logo {
+                width: 220px;
+                height: 54px;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .atv-info {
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+            }
+
+            .atv-large {
+                color: var(--text-color2);
+                font-family: sans-serif;
+                font-size: 18px;
+            }
+
+            .atv-small {
+                color: var(--text-color2);
+                font-family: sans-serif;
+                font-size: 16px;
+                font-weight: 100;
+                text-align: center;
+                margin: 0 20px;
+
+                .atv-large {
+                    display: none;
+                }
+            }
+
+            .atv-btn {
+                width: 145px;
+                height: 45px;
+                background-color: var(--text-color2);
+                border-radius: 33px;
+                text-align: center;
+                line-height: 45px;
+                font-size: 16px;
+                font-family: sans-serif;
+                font-weight: 600;
+                margin: 10px 0;
+                cursor: pointer;
+            }
+
+            .atv-btn:hover {
+                background-color: var(--icon-color);
+            }
+
+            .fa-solid.fa-circle-play{
+                margin-left: 3px;
+            }
+        }
+
+        .control {
+            .arrow {
+                width: calc((100% - 304px) / 2);
+                height: 495px;
+                position: absolute;
+                top: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 25px;
+                color: rgba(0, 0, 0, 0.56);
+                cursor: pointer;
+            }
+
+            .next {
+                right: 0;
+            }
+
+            .prev {
+                left: 0;
+            }
+
+            .auto {
+                display: block;
+                position: absolute;
+                bottom: 8px;
+                right: 20px;
+                cursor: pointer;
+            }
+
+            .play {
+                display: none;
+            }
+
+            .dotnav-wrapper {
+                position: absolute;
+                right: 50%;
+                bottom: 0px;
+                transform: translateX(50%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--text-color);
+                background-color: transparent;
+
+                .dotnav {
+                    font-size: 35px;
+                    padding: 0 6px;
+                    cursor: pointer;
+                }
+
+                .dotnav:hover {
+                    color: var(--bg-color);
+                }
+
+                .dot-dark {
+                    color: var(--black);
+                }
+            }
+        }
+
+        .slider {
+            display: flex;
+            justify-content: center;
+            transition: 0.5s ease;
+        }
+
+        .img-item {
+            flex: 0 0 auto;
+            width: 274px;
+            height: 495px;
+            background-size: 274px 593px;
+            background-repeat: no-repeat;
+            margin: 0 7.5px;
+            opacity: 0.4;
+            transition: 0.5s ease;
+            cursor: pointer;
+        }
+
+        .img-vis {
+            opacity: 1 !important;
+        }
+
+        .img-1 {
+            background-image: url(sample/mobile_1096x164\ \(1\).jpg);
+
+            .atv-logo {
+                background-image: url(sample/mobile_1096x164\ \(11\).png);
+            }
+        }
+
+        .img-2 {
+            background-image: url(sample/mobile_1096x164\ \(2\).jpg);
+
+            .atv-logo {
+                background-image: url(sample/mobile_1096x164\ \(12\).png);
+            }
+        }
+
+        .img-3 {
+            background-image: url(sample/mobile_1096x164\ \(3\).jpg);
+
+            .atv-logo {
+                background-image: url(sample/mobile_1096x164\ \(13\).png);
+            }
+        }
+
+        .img-4 {
+            background-image: url(sample/mobile_1096x164\ \(4\).jpg);
+
+            .atv-logo {
+                background-image: url(sample/mobile_1096x164\ \(14\).png);
+            }
+        }
+
+        .img-5 {
+            background-image: url(sample/mobile_1096x164\ \(5\).jpg);
+
+            .atv-logo {
+                background-image: url(sample/mobile_1096x164\ \(15\).png);
+            }
+        }
+
+        .img-6 {
+            background-image: url(sample/mobile_1096x164\ \(6\).jpg);
+
+            .atv-logo {
+                background-image: url(sample/mobile_1096x164\ \(16\).png);
+            }
+        }
+
+        .img-7 {
+            background-image: url(sample/mobile_1096x164\ \(7\).jpg);
+
+            .atv-logo {
+                background-image: url(sample/mobile_1096x164\ \(17\).png);
+            }
+        }
+
+        .img-8 {
+            background-image: url(sample/mobile_1096x164\ \(8\).jpg);
+
+            .atv-logo {
+                background-image: url(sample/mobile_1096x164\ \(18\).png);
+            }
+        }
+
+        .img-9 {
+            background-image: url(sample/mobile_1096x164\ \(9\).jpg);
+
+            .atv-logo {
+                background-image: url(sample/mobile_1096x164\ \(19\).png);
+            }
+        }
+    }
+}
+
+
+/**   Tablets   **/
+
+@media (min-width:735px) {
+    .tabMenu-pos {
+        display: flex;
+        margin-bottom: 100px;
+    }
+
+    .main {
+        .top-offer {
+            .offer-text {
+                width: 632px;
+            }
+        }
+
+        .large-text {
+            font-size: 48px;
+            margin-bottom: 2px;
+        }
+
+        .mid-text {
+            font-size: 24px;
+            margin-bottom: 2px;
+        }
+
+        .text-con {
+            margin-top: 60px;
+        }
+
+        .info-con {
+            height: 650px;
+            background-size: 1068px 694px;
+        }
+
+        .macBook-air {
+            .info-con {
+                background-image: url(sample/tab_hero_macbook_air_15.jpg);
+            }
+        }
+
+        .iphone-14-pro {
+            .info-con {
+                background-image: url(sample/tab_hero_iphone14pro_spring.jpg);
+            }
+        }
+
+        .gridMain-pos {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 10px;
+            border: 10px solid transparent;
+            border-top: 0;
+
+            .large-text {
+                font-size: 32px;
+            }
+
+            .mid-text {
+                font-size: 20px;
+            }
+
+            .text-con {
+                margin-top: 40px;
+            }
+
+            .info-con {
+                height: 490px;
+                background-size: 516px 490px;
+                margin: 0;
+            }
+
+            .iphone-14 {
+                .info-con {
+                    background-image: url(sample/tab_promo_iphone14_yellow.jpg);
+                }
+            }
+
+            .watch-series-8 {
+                .info-con {
+                    background-image: url(sample/tab_promo_apple_watch_series_8.jpg);
+                }
+            }
+
+            .ipad-pro {
+                .info-con {
+                    background-image: url(sample/tab_promo_ipadpro.jpg);
+                }
+            }
+
+            .trade-in {
+                .info-con {
+                    background-image: url(sample/tab_iphone_tradein_promo.jpg);
+                }
+            }
+
+            .mac-studio {
+                .info-con {
+                    background-image: url(sample/tab_promo_mac_studio.jpg);
+                }
+            }
+
+            .homepod {
+                .info-con {
+                    background-image: url(sample/tab_promo_homepod.jpg);
+                }
+            }
+        }
+    }
+
+    /* carousel */
+    .main {
+        .carousel {
+            height: 425px;
+
+            .atv-container {
+                justify-content: flex-end;
+                align-items: flex-start;
+                /* background-image: none; */
+                background-image: linear-gradient(to top, var(--black), transparent, transparent, transparent);
+
+                .atv-pos {
+                    display: none;
+                    margin: 0;
+                }
+
+                .atv-only {
+                    display: flex;
+                    flex-flow: row-reverse;
+                    align-items: center;
+                    margin: 0;
+                    margin-bottom: 20px;
+                    margin-left: 30px;
+                }
+
+                .atv-info {
+                    flex-flow: column;
+                    align-items: flex-start;
+                    margin-left: 30px;
+                }
+
+                .atv-large {
+                    display: none;
+                }
+
+                .atv-small {
+                    width: 340px;
+                    text-align: start;
+                    font-size: 18px;
+                    margin: 0;
+
+                    .atv-large {
+                        display: inline;
+                        font-size: 20px;
+                    }
+                }
+
+                .atv-btn {
+                    margin: 0;
+                }
+            }
+
+            .control {
+                .arrow {
+                    width: calc((100% - 718px) / 2);
+                    height: 425px;
+                }
+
+                .auto {
+                    right: 30px;
+                }
+            }
+
+            .img-item {
+                width: 688px;
+                height: 387px;
+                background-size: 688px 387px;
+            }
+
+            .img-1 {
+                background-image: url(sample/tab_1378x774\ \(1\).jpg);
+            }
+
+            .img-2 {
+                background-image: url(sample/tab_1378x774\ \(2\).jpg);
+            }
+
+            .img-3 {
+                background-image: url(sample/tab_1378x774\ \(3\).jpg);
+            }
+
+            .img-4 {
+                background-image: url(sample/tab_1378x774\ \(4\).jpg);
+            }
+
+            .img-5 {
+                background-image: url(sample/tab_1378x774\ \(5\).jpg);
+            }
+
+            .img-6 {
+                background-image: url(sample/tab_1378x774\ \(6\).jpg);
+            }
+
+            .img-7 {
+                background-image: url(sample/tab_1378x774\ \(7\).jpg);
+            }
+
+            .img-8 {
+                background-image: url(sample/tab_1378x774\ \(8\).jpg);
+            }
+
+            .img-9 {
+                background-image: url(sample/tab_1378x774\ \(9\).jpg);
+            }
+        }
+    }
+}
+
+/**  Big Screens  **/
+
+@media (min-width:1069px) {
+    .header {
+        height: 44px;
+
+        .mob-nav {
+            display: none;
+        }
+
+        .big-nav {
+            display: none;
+        }
+    }
+
+    .main {
+        margin-top: 44px;
+
+        .large-text {
+            font-size: 56px;
+        }
+
+        .mid-text {
+            font-size: 28px;
+        }
+
+        .blue-link {
+            font-size: 22px;
+        }
+
+        .info-con {
+            height: 700px;
+            background-size: 3008px 736px;
+        }
+
+        .macBook-air {
+            .info-con {
+                background-image: url(sample/big_hero_macbook_air_15.jpg);
+            }
+        }
+
+        .iphone-14-pro {
+            .info-con {
+                background-image: url(sample/big_hero_iphone14pro_spring.jpg);
+            }
+        }
+
+        .gridMain-pos {
+            .large-text {
+                font-size: 40px;
+            }
+
+            .mid-text {
+                font-size: 22px;
+            }
+
+            .blue-link {
+                font-size: 16px;
+            }
+
+            .text-con {
+                margin-top: 50px;
+            }
+
+            .info-con {
+                height: 580px;
+                background-size: 1262px 580px;
+                margin: 0;
+            }
+
+            .iphone-14 {
+                .info-con {
+                    background-image: url(sample/big_promo_iphone14_yellow.jpg);
+                }
+            }
+
+            .watch-series-8 {
+                .info-con {
+                    background-image: url(sample/big_promo_apple_watch_series_8.jpg);
+                }
+
+                .pic {
+                    width: 137px;
+                    height: 52px;
+                    background-image: url(sample/big_promo_logo_apple_watch_series_8.png);
+                    background-size: 137px 52px;
+                }
+            }
+
+            .ipad-pro {
+                .info-con {
+                    background-image: url(sample/big_promo_ipadpro.jpg);
+                }
+
+                .pic {
+                    width: 37px;
+                    height: 37px;
+                    background-image: url(sample/mobile_promo_m2_chip.png);
+                    background-size: 37px 37px;
+                }
+            }
+
+            .trade-in {
+                .info-con {
+                    background-image: url(sample/big_iphone_tradein_promo.jpg);
+                }
+
+                .pic {
+                    width: 155px;
+                    height: 32px;
+                    background-image: url(sample/mobile_logo_tradein.png);
+                    background-size: 155px 32px;
+                }
+            }
+
+            .mac-studio {
+                .info-con {
+                    background-image: url(sample/big_promo_mac_studio.jpg);
+                }
+            }
+
+            .homepod {
+                .info-con {
+                    background-image: url(sample/big_promo_homepod.jpg);
+                }
+            }
+        }
+    }
+
+    /* carousel */
+    .main {
+        .carousel {
+            height: 568px;
+            
+            .atv-container{
+
+                .atv-only{
+                    margin-bottom: 30px;
+                    margin-left: 40px;
+                }
+
+                .atv-info{
+                    margin-left: 30px;
+                }
+
+                .atv-small{
+                    width: 600px;
+                    font-size: 20px;
+
+                    .atv-large{
+                        font-size: 22px;
+                    }
+                }
+            }
+
+            .control {
+                user-select: none;
+                
+                .arrow {
+                    width: calc((100% - 1010px) / 2);
+                    height: 530px;
+                }
+            }
+
+            .img-item {
+                width: 980px;
+                height: 530px;
+                background-size: 980px 551px;
+            }
+
+            .img-1 {
+                background-image: url(sample/big_1960x1102\ \(1\).jpg);
+            }
+
+            .img-2 {
+                background-image: url(sample/big_1960x1102\ \(2\).jpg);
+            }
+
+            .img-3 {
+                background-image: url(sample/big_1960x1102\ \(3\).jpg);
+            }
+
+            .img-4 {
+                background-image: url(sample/big_1960x1102\ \(4\).jpg);
+            }
+
+            .img-5 {
+                background-image: url(sample/big_1960x1102\ \(5\).jpg);
+            }
+
+            .img-6 {
+                background-image: url(sample/big_1960x1102\ \(6\).jpg);
+            }
+
+            .img-7 {
+                background-image: url(sample/big_1960x1102\ \(7\).jpg);
+            }
+
+            .img-8 {
+                background-image: url(sample/big_1960x1102\ \(8\).jpg);
+            }
+
+            .img-9 {
+                background-image: url(sample/big_1960x1102\ \(9\).jpg);
+            }
+        }
+    }
+}
