@@ -364,12 +364,14 @@ const bigSrhCls = document.getElementById("bigMenu-srh-cls");
 
 bigSrh.addEventListener("mouseenter", function () {
     head.classList.add("black");
-    main.classList.add("main-blur");
+    main.classList.add("back-blur");
+    footer.classList.add("back-blur");
 });
 
 bigSrh.addEventListener("mouseleave", function () {
     head.classList.remove("black");
-    main.classList.remove("main-blur");
+    main.classList.remove("back-blur");
+    footer.classList.remove("back-blur");
 });
 
 bigSrhInp.addEventListener("keyup", function () {
@@ -390,27 +392,32 @@ const bigCart = document.getElementById("big-nav-cart");
 
 bigCart.addEventListener("mouseenter", function () {
     head.classList.add("black");
-    main.classList.remove("main-blur");
+    main.classList.add("back-blur");
+    footer.classList.add("back-blur");
 });
 
 bigCart.addEventListener("mouseleave", function () {
     head.classList.remove("black");
-    main.classList.remove("main-blur");
+    main.classList.remove("back-blur");
+    footer.classList.remove("back-blur");
 });
 
-// main blur effect
+// backdrop blur effect
 const main = document.getElementById("main");
+const footer=document.getElementById("footer");
 const bigNavItem = document.querySelectorAll(".big-nav-item");
 
 bigNavItem.forEach(function (element) {
     element.addEventListener("mouseenter", function () {
         head.classList.add("black");
-        main.classList.add("main-blur");
+        main.classList.add("back-blur");
+        footer.classList.add("back-blur");
     })
 
     element.addEventListener("mouseleave", function () {
         head.classList.remove("black");
-        main.classList.remove("main-blur");
+        main.classList.remove("back-blur");
+        footer.classList.remove("back-blur");
     })
 })
 
@@ -528,16 +535,16 @@ play.addEventListener("click", function () {
     pause.style.display = "block";
 
     move = 0;
-    // autoStart();
+    autoStart();
 });
 
-// function autoStart() {
-//     autoPlay = setInterval(() => {
-//         nextSlider();
-//     }, 3000);
-// };
+function autoStart() {
+    autoPlay = setInterval(() => {
+        nextSlider();
+    }, 3000);
+};
 
-// body.addEventListener("onload", autoStart());
+body.addEventListener("onload", autoStart());
 
 function dotColor() {
     dot1.classList.remove("dot-dark");
